@@ -9,13 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Simple Sidebar - Start Bootstrap Template</title>
-    <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
-    
-    <!-- Custom CSS -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
-
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -30,8 +25,9 @@
             width:100%;
         }
         #main-nav>li{
-            width:20%;
-            border-right: 0.5px solid #5D62BD;
+            border-right: 0.5px solid #5d62bd;
+            max-height: 55px;
+            width: 20%;
         }
         #main-nav li.last{
             border-right: 0;
@@ -100,14 +96,14 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" id = 'nav-holder'>
         <ul class="nav navbar-nav" id="main-nav">
             <li class="dropdown first">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Members <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Members </a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="member/member_by_category.asp">Browse By Category</a></li>
                     <li><a href="member/member_by_name.asp">Browse By Name</a></li>
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About The Chamber<span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About The Chamber</a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="about_chamber/our_mission.asp">Our Misson</a></li>
                     <li><a href="about_chamber/message_from_president.asp">President's Message</a></li>
@@ -117,14 +113,14 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Events &amp; Meetings<span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Events &amp; Meetings</a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="event_calendar/upcoming_event_list.asp">Upcoming Events &amp; Meetings</a></li>
                     <li><a href="event_calendar/past_event_list.asp">Past Events &amp; Meetings</a></li>
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Ronkonkoma<span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Ronkonkoma</a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="about_ronkonkoma/orignal_residents.asp">Original Residents and Early Settlers</a>
                     <li><a href="about_ronkonkoma/summer_resort.asp">Summer Resort</a></li>
@@ -133,7 +129,7 @@
                 </ul>
             </li>
             <li class="dropdown last">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Membership<span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Membership</a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="join_renew/membership_types.asp">Membership Details</a></li>
                     <li><a href="join_renew/form.asp">Begin or Renew your Membership</a></li>
@@ -190,7 +186,6 @@
             </div>
         </div>
         <!-- /#page-content-wrapper -->
-
     </div>
     <!-- /#wrapper -->
     <script src="js/jquery-1.11.0.js"></script>
