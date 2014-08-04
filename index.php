@@ -76,7 +76,14 @@
             background-color: #b88608;
             width:100%;
         }
-        #footer{background: url("../images/footer-background.png")}
+        #footer{
+            background: url("../images/footer_background.png") repeat-x;
+            max-height: 218px;
+            padding:15px;
+            color:#fff;
+            position: relative;
+            z-index: 500000;
+        }
     </style>
 </head>
 <body>
@@ -175,8 +182,8 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
+                <?php include("includes/slideshow.php"); ?>
                 <div class="row">
-                    <?php include("includes/slideshow.php"); ?>
                     <div class="col-lg-12">
                         <h1>Simple Sidebar</h1>
                         <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
@@ -199,7 +206,7 @@
     </script>
     <div id="footer">
         <div class="container">
-            <p class="muted credit"></p>
+            <p class="muted credit">Copyright &copy; 2013. The Chamber of Commerce of the Great Ronkonkomas</p>
         </div>
     </div>
 </body>

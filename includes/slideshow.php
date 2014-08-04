@@ -1,25 +1,72 @@
-<div id="slideshow">
-  <a href="#" id="prev"></a>
-  <a href="#" id="next"></a>
-  <a href="" id="slideshow-link" ><span style="background:none;"></span></a>
-  <!-- slides -->
-  <ul id="slides">
-        <!--li><a href="#1"><img src="images/ss4.png"  alt="Imagen" width="888" /><div>It's standing room only at the Chamber's First Annual "Taste of Ronkonkoma" at Ronkonkoma Holiday Inn.</div></a></li-->
-    <!--li><a href="#3"><img src="images/IMG_5404.png"  alt="Imagen" width="888"/><div>The perfect end of the evening at our Clambake.</div></a></li>
-    <li><a href="#4"><img src="images/IMG_0104.png"  alt="Imagen" width="888" /><div>Sandy Weber accepting the Chamber's award for Heart & Soul.
- </div></a></li>
-    <li><a href="#5"><img src="images/IMG_0095.png"  alt="Imagen" width="888" /><div>Joining in the fun at our Heart and Soul Dinner.</div></a></li>
-        <li><a href="#6"><img src="images/IMG_0088.png"  alt="Imagen" width="888" /><div>Annual Chamber Heart & Soul Awards Dinner.  You never know who's going to show up!.</div></a></li-->
-    <li><a href="#6"><img src="<%=host_url%>/images/paw.png"  alt="Imagen" width="888" /><div>Paws of War.</div></a></li>
-    <li><a href="#2"><img src="<%=host_url%>/images/DSC_0198.png"  alt="Imagen" width="888"/><div>Marching in the St. Patricks Parade with Mascot "Peanut".</div></a></li>
-    <li><a href="#8"><img src="images/2013_heart_n_soul.JPG"  alt="Imagen" width="888" /><div>Ronkonkoma Chamber of Commerce 2013 Heart & Soul Recipients</div></a></li>
-    <li><a href="#3"><img src="<%=host_url%>/images/CIMG3651copy.png"  alt="Imagen" width="888" /><div>Chamber welcomes new businesses into Ronkonkoma.</div></a></li>
-    <li><a href="#4"><img src="<%=host_url%>/images/bakery.png"  alt="Imagen" width="888" /><div>Chamber welcoming new bakery to town.</div></a></li>
-    <li><a href="#5"><img src="<%=host_url%>/images/2014installation.jpg"  alt="Imagen" width="888" /><div>2014 Board Installation</div></a></li>
-    <li><a href="#1"><img src="<%=host_url%>/images/P1050283.png"  alt="Imagen" width="888" /><div>Taste of Ronkonkoma.  Bon Appetit!</div></a></li>
-        <!--li><a href="#10"><img src="images/2012-street-fair.png"  alt="Imagen" width="888" /><div>Ronkonkoma Annual Street Fair Draws Thousands Every Year.</div></a></li-->
-    
-  </ul>
-  <!-- ENDS slides -->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="6"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="images/home-page-slider/5.png" alt="St.Patricks Day">
+      <div class="carousel-caption">
+        Marching in the St. Patricks Parade with Mascot "Peanut".
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="images/home-page-slider/1.jpg" alt="2013 Heart and Soul Dinner Image">
+      <div class="carousel-caption">
+        Ronkonkoma Chamber of Commerce 2013 Heart &amp; Soul Recipients
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="images/home-page-slider/2.jpg" alt="...">
+      <div class="carousel-caption">
+        2014 Board Installation
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="images/home-page-slider/3.png" alt="bakery">
+      <div class="carousel-caption">
+        Chamber welcoming new bakery to town.
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="images/home-page-slider/4.png" alt="new business">
+      <div class="carousel-caption">
+        Chamber welcomes new businesses into Ronkonkoma.
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="images/home-page-slider/6.png" alt="Taste of Ronkonkoma.  Bon Appetit!">
+      <div class="carousel-caption">
+        Taste of Ronkonkoma.  Bon Appetit!
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="images/home-page-slider/7.png" alt="Paws of War.">
+      <div class="carousel-caption">
+        Paws of War.
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
 </div>
-<!-- ENDS slideshow -->
