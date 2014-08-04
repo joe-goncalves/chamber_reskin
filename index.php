@@ -83,6 +83,10 @@
             color:#fff;
             position: relative;
             z-index: 500000;
+            text-shadow: 2px 2px 1px #000;
+        }
+        #footer h2:{
+
         }
     </style>
 </head>
@@ -206,7 +210,21 @@
     </script>
     <div id="footer">
         <div class="container">
-            <p class="muted credit">Copyright &copy; 2013. The Chamber of Commerce of the Great Ronkonkomas</p>
+            <div>
+                <h2>The Chamber of Commerce of the Greater Ronkonkomas</h2>
+                <table>
+                    <tr>
+                        <td>Contact Us:</td>
+                        <td>PO Box 2546</td>
+                        <td>p: 631-963-2796</td>
+                    </tr>
+                    <tr>
+                        <td>Ronkonkoma, NY 11779</td>
+                        <td>e:  <a class="foot_links" href="mailto:info@ronkonkomachamber.com">info@ronkonkomachamber.com</a></td>
+                    </tr>
+                </table>
+            </div>
+            <p class="footnotes">Copyright &copy; 2013. The Chamber of Commerce of the Great Ronkonkomas</p>
         </div>
     </div>
 </body>
