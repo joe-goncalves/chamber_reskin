@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /chamber/
+RewriteRule ^member/(.*)/$ member_details.php?memberURLName=$2 [NC]
+</IfModule>

@@ -1,0 +1,53 @@
+<NewDataSet><Table>|1|Accounting
+|2|Automotive
+|3|Banking / Mortgage Services
+|4|Beauty Salons
+|5|Business Supplies / Services
+|6|Commercial &amp; Residential Services
+|7|Community Organizations
+|8|Contractor Services
+|9|Dance Studios
+|10|Elected Officials
+|11|Entertainment / Parties / Event Planning
+|12|Florists
+|13|Food Speciality
+|14|Fuel Oil &amp; Service
+|15|Funeral Services 
+|16|Hardware/Paint
+|17|Health / Wellness / Cosmetics 
+|18|Hotel / Motel Accommodations
+|19|Insurance
+|20|Investments / Financial Services
+|21|Jeweler
+|22|Liquor &amp; Wines
+|23|Manufacturing
+|24|Martial Arts
+|25|Media
+|26|Medical / Dental Care
+|27|Movie Theatre
+|28|Non-Profit
+|29|Pets
+|30|Pharmacy
+|31|Places of Worship
+|32|Plumbing and Heating
+|33|Printing
+|34|Real Estate Services
+|35|Resident
+|36|Restaurant / Caterers / Bar
+|37|Retail / Wholesale Foods
+|38|Retail Stores / Services
+|39|Schools / Libraries
+|40|Senior Living
+|41|Sports Leagues &amp; Organizations
+|42|Travel Services
+|43|Website Design
+|44|Resident
+|45|Legal Services
+|46|Transportation
+|47|Payroll Services
+|48|Reverse Mortgages
+|49|Advertising
+|50|Independent Consultants
+|51|Signs and Graphics
+|52|Arts and Entertainment
+|53|Nursery</Table></NewDataSet>

@@ -1,0 +1,87 @@
+
+        body{
+            background-color: #eee;
+            font-size:13px;
+            padding:15px;
+        }
+        #main-nav{
+            width:100%;
+        }
+        #main-nav>li{
+            border-right: 0.5px solid #5d62bd;
+            max-height: 55px;
+            width: 20%;
+        }
+        #main-nav li.last{
+            border-right: 0;
+        }
+        .navbar-collapse.collapse.in #main-nav li{
+            width:100%;
+        }
+        #main-nav li a{
+            color:#fff;
+            text-shadow: 2px 2px 1px black;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding-bottom: 14px
+        }
+        #main-nav .dropdown-menu li{width:100%}
+        #header-img{
+            width:100%;
+            margin-left: 1%;
+            position: relative;
+            z-index: 1000000;
+            pointer-events:none;
+            background-color: none;
+        }
+        #nav-holder{
+            background: url('../images/nav_background.png');
+            background-repeat: repeat-x;
+        }
+        .navbar-collapse.collapse.in{
+            background-color: #5359B5;
+            border: none;
+        }
+        #nav-holder{
+            margin-top: -5.2%;
+                margin-right:auto;
+            border: none;
+            margin-bottom: 0;
+        }
+        .navbar-default .navbar-toggle{
+            background-color: transparent;
+            color:#fff;
+        }
+        .navbar-default .navbar-toggle .icon-bar {
+            background-color: #FFF;
+        }
+        .dropdown-menu {
+            background-color: #b88608;
+        }
+        #sidebar-wrapper {
+            background:url("../images/sidebar-background.png") repeat-y;
+            padding:20px 5px;
+        }
+        #footer{
+            background: url("../images/footer_background.png") center repeat-x;
+            background-size: auto 100%;
+            padding:15px;
+            color:#fff;
+            font-size:13px;
+            text-shadow: 2px 2px 1px #000;
+        }
+        #footer h2{
+            margin-top: 0;
+            text-transform: uppercase;
+            font-size: 15px;
+        }
+        .item img{
+            margin: 0 auto;
+        }
+        .left.carousel-control span{float:left;}
+        .right.carousel-control span{float:right;}
+        .hidden{display:none;}
+        
+
+
+
