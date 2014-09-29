@@ -57,18 +57,10 @@
         $('[data-catid]').click(function(e){
             e.preventDefault();
         })
-        $("li.list-group-item.first").each(function (){
-            var cat = $(this).children('a').attr('data-catid');
-            var count = $(this).children(".list-group.second").children().size();
-            $(this).find('span.badge').html(count);
-        });
-        $(".list-group.second").slideUp();
         $('.list-group-item.first').click(function(){ /*  include a catch to close open lists on click of open list header  */
-            $(".list-group.second").slideUp();
-            $('span.badge').removeClass('hidden');
-            $(this).find('span.badge').addClass('hidden');
-            $(this).find(".list-group.second").slideDown();
-            
+           $('[data-membercatid]').parent().addClass('hidden');
+           var curval = $(this).children('a').attr("data-catid");
+           $('[data-membercatid='+curval+']').parent().removeClass('hidden');
         });
 
 

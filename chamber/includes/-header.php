@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?include '-classes.php';?>
 <html lang="en">
 <head>
     <?php include $_SERVER['DOCUMENT_ROOT']."/Chamber/-local_settings.php";?>
@@ -47,8 +48,8 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Events &amp; Meetings</a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="<?=$local_url?>/event_calendar/upcoming_event_list.php">Upcoming Events &amp; Meetings</a></li>
-                        <li><a href="<?=$local_url?>/event_calendar/past_event_list.php">Past Events &amp; Meetings</a></li>
+                        <li><a href="<?=$local_url?>/event-upcoming-list.php">Upcoming Events &amp; Meetings</a></li>
+                        <li><a href="<?=$local_url?>/event-past-list.php">Past Events &amp; Meetings</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -75,32 +76,5 @@
     <div class="container-fluid">
         <div class="row" id="page-content">
             <div id="sidebar-wrapper" class="col-lg-2">
-                <ul class="sidebar-nav">
-                    <li class="sidebar-brand">
-                        <a href="#">
-                            Start Bootstrap
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="#">Shortcuts</a>
-                    </li>
-                    <li>
-                        <a href="#">Overview</a>
-                    </li>
-                    <li>
-                        <a href="#">Events</a>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
+                <?php include $_SERVER['DOCUMENT_ROOT']."/chamber/includes/-sidebar.php";?>
             </div>

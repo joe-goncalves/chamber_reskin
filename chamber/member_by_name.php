@@ -11,7 +11,8 @@
 			        $res = $mysqli->query("SELECT * FROM member");
 						while ($row = $res->fetch_assoc()){
 							foreach($row as $key => $val)$$key = $val;
-							echo "<a class = 'list-group-item' href='#' data-catid='".$pkid."'>".$memberName."</a>";
+							$member = new member ($pkid, $mysqli);
+							echo "<a class = 'list-group-item' href='member_details.php/?id=".$member->id."'>".$member->name."</a>";
 						};
 			        ?>
 			    </div>

@@ -1,9 +1,9 @@
 <?php
-$file = file_get_contents("memberCat.xml");
+$file = file_get_contents("events.xml");
 $row_delimiter = "</Table><Table>";
-$column_name_array = array("pkid","memberCatName");
+$column_name_array = array("eventName","eventDay","eventDate","eventLoc","eventDesc","active","pkid","eventPrice","eventTime","eventType");
 
-sqlServerXMLtoCSV($file, "memberCat.txt", $row_delimiter, $column_name_array);
+sqlServerXMLtoCSV($file, "event.txt", $row_delimiter, $column_name_array);
 
 
 

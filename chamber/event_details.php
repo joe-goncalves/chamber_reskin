@@ -2,10 +2,10 @@
 <?php include "includes/-header.php";?>
         <div class="col-lg-8">
         	<?php
-        		$member = new member($_GET['id'], $mysqli);
-        		echo "<h2>" . $member->name . "</h2>";
+        		$event = new event($_GET['id'], $mysqli);
+                        echo "<h2>" . $event->name . "</h2>";
         		echo "<ul class = 'list-unstyled'>";
-        		$details = $member->properNameArray();
+        		$details = $event->properNameArray();
         		foreach($details as $key => $val){
         			echo "<li>";
         				echo "<strong>" . $key . ":  </strong>";
