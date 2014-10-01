@@ -2,8 +2,9 @@
 <?php include "../includes/-header.php";?>
 <?php
 if (isset($_POST['memberName'])){
-	$member=new member(false,$mysqli,$_POST);
-	echo "<h1>".$member->name." has been added</h1>";
+	$member=new member();
+	$member->addAsNew($_POST,$mysqli);
+	echo "<h1>".$_POST['memberName']." has been added</h1>";
 	include "../includes/-footer.php";
 	exit();
 }
@@ -128,6 +129,12 @@ if (isset($_POST['memberName'])){
 					  <div class="form-group">
 					    <label for="yearsInArea">Years in Area</label>
 					    <input type="text" class="form-control" id="yearsInArea" name="yearsInArea" placeholder="Enter number of years active">
+					  </div>
+					  <div class="form-group">
+					    <label for="memberLevel">Membership Level</label>
+					    <select class="form-control" id="memberLevel" name="memberLevel" >
+					    	<?php drawOptionsFromTable("member_lvl", $mysqli);?>
+					    </select>
 					  </div>
 					  <button type="submit" class="btn btn-default">Submit</button>
 					</form>

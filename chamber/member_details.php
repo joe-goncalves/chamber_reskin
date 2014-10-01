@@ -2,7 +2,8 @@
 <?php include "includes/-header.php";?>
         <div class="col-lg-8">
         	<?php
-        		$member = new member($_GET['id'], $mysqli);
+        		$member = new member();
+                        $member->getAllPropsByID($_GET['id'], $mysqli);
         		echo "<h2>" . $member->name . "</h2>";
         		echo "<ul class = 'list-unstyled'>";
         		$details = $member->properNameArray();

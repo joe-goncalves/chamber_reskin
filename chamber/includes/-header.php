@@ -1,8 +1,9 @@
+<?php include $_SERVER['DOCUMENT_ROOT']."/chamber/-local_settings.php";?>
+<?php include '-classes.php';?>
+<?php include '-custom_functions.php';?>
 <!DOCTYPE html>
-<?include '-classes.php';?>
 <html lang="en">
 <head>
-    <?php include $_SERVER['DOCUMENT_ROOT']."/Chamber/-local_settings.php";?>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
