@@ -13,5 +13,10 @@
         		<?php $member=new member();$member->drawMemberOfTheDay($mysqli);?>
         	</div>
         </div>
+        <div class = "row">
+        	<div class="col-lg-8">
+        		
+        	</div>
+       	</div>
 <?php include "includes/-footer.php";?>
    

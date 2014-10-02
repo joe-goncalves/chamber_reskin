@@ -12,7 +12,6 @@
     <meta name="author" content="">
     <title><?php echo $local_url; ?></title>
     <link href="<?=$local_url?>/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?=$local_url?>/css/custom.css" rel="stylesheet">
 </head>
 <body>
 <div id="wrapper">
