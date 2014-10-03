@@ -19,10 +19,21 @@ function postLatestFlyer($mysqli){
 
 	echo'<img class="img-responsive center-block" src="data:image/jpeg;base64,'.$image.'"/>';
 }
-function getPresMessage($mysqli){
+function getPresMessage($mysqli, $truncated=false){
 	$query = "SELECT message FROM pres_msg ORDER BY timestamp DESC LIMIT 1";
 	$res = $mysqli->query($query);
 	$row = $res->fetch_assoc();
-	echo $row['message'];
+	$message = $row['message'];
+	if($truncated){
+		$messagearray = explode(' ', $message);
+		$shortmsg = [];
+		for($i=0;$i<3;$i++){
+			array_push($shortmsg, $messagearray[$i]);
+		}
+		echo implode(' ', $shortmsg)."...<a href='about_chamber/message_from_president.php'>read more!!</a>";
+	}else{
+		echo $message;	
+	} 
+	
 }
 ?>

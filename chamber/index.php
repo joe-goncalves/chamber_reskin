@@ -22,17 +22,25 @@
 	   </div>
     </div>
     <div class="row">
+        <h4>Upcoming Chamber Meeting</h4>
        <div class="col-lg-6">
-          <h4>Upcoming Chamber Meeting</h4>
           <?php  event::postNextMeeting($mysqli);?>
        </div>
     </div>
     <div class="row">
+        <h4>Presidents Message</h4>
        <div class="col-lg-12">
-          <h4>Presidents Message</h4>
-          <?php  getPresMessage($mysqli);?>
+          <?php getPresMessage($mysqli, true);?>
        </div>
     </div>
-    
+    <div class="row">
+        <h4>Welcome To Ronkonkoma</h4> 
+        <div class="thumbnail col-lg-2">
+            <img src="images/about_ronk.jpg" alt=" ">
+        </div>
+        <div class="col-lg-10">
+          The chamber is comprised of people who are committed to improving the economic climate and quality of life in the greater Ronkonkomas. The strength of the chamber lies in the size and diversity of its membership. Both large and small businesses from virtually every profession are represent. The members ARE the chamber.
+        </div>
+    </div>
 <?php include "includes/-footer.php";?>
    
