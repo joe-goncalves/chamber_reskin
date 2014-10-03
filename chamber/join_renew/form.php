@@ -133,7 +133,7 @@ if (isset($_POST['memberName'])){
 					  <div class="form-group">
 					    <label for="memberLevel">Membership Level</label>
 					    <select class="form-control" id="memberLevel" name="memberLevel" >
-					    	<?php drawOptionsFromTable("member_lvl", $mysqli);?>
+					    	<?php drawOptionsFromTable("member_lvl", $mysqli, true);?>
 					    </select>
 					  </div>
 					  <button type="submit" class="btn btn-default">Submit</button>

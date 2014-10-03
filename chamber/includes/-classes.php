@@ -19,7 +19,6 @@ class memberCategory {
 
 
 class event{
-	public $mysqli;
 	public $active;
 	public $pkid;
 	public $price;
@@ -38,6 +37,8 @@ class event{
 			foreach($row as $key => $val){
 				$$key = $val;
 			}
+			$dateobj = new DateTime($eventDate);
+			$date=$dateobj->format('m/d/Y'); 
 			$this->active = $active;
 			$this->price = $eventPrice;
 			$this->time = $eventTime;
@@ -45,11 +46,26 @@ class event{
 			$this->name = $eventName;
 			$this->day = $eventDay;
 			$this->desc = $eventDesc;
-			$this->date = $eventDate;
+			$this->date = $date;
 			$this->loc = $eventLoc;
 		}
 	}
-
+	public static function postNextMeeting($mysqli){
+		$query = "SELECT pkid FROM event WHERE eventType=2 AND curdate() < eventDateExp ORDER BY pkid DESC LIMIT 1";
+		$res = $mysqli->query($query);
+		if ($res->num_rows == 1){
+			$row = $res->fetch_assoc();	
+			$mtg=new event ($row['pkid'],$mysqli);
+			$mtg->drawEventLink();
+		}else {
+			echo "No upcoming chamber meetings.";	
+		}
+		
+		
+	}
+	public function drawEventLink(){
+		echo "<a class = 'list-group-item' href='event_details.php/?id=".$this->pkid."'>".$this->name.":  ".$this->date. " at " . $this->time."</a>";
+	}
 	public function properNameArray(){
 		$values = [];
 		$friendlyfields = array(

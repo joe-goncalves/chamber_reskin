@@ -7,7 +7,7 @@
       	while ($row = $res->fetch_assoc()){
       		foreach($row as $key => $val)$$key = $val;
       		$event=new event($pkid, $mysqli);
-      		echo "<a class = 'list-group-item' href='event_details.php/?id=".$event->pkid."'>".$event->name."</a>";
+      		$event->drawEventLink();
       	}
       	?>  
         </div>
