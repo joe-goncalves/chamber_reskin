@@ -12,28 +12,10 @@
             $res = $mysqli->query("SELECT pkid FROM event WHERE eventDateExp>curdate() ORDER BY eventDate LIMIT 3");
             while ($row = $res->fetch_assoc()){
                 $cur=new event($row['pkid'],$mysqli);
-                echo "<a class = 'list-group-item' href='event_details.php/?id=".$cur->pkid."'>".$cur->name."<br/>".$cur->date."</a>";
+                $cur->drawEventLink();
             }
             ?>
             <li><a class = 'list-group-item' href="<?=$local_url?>/event-upcoming-list.php">View Full List</a></li>
         <ul/>
-    </li>
-    <li>
-        <a href="#">Shortcuts</a>
-    </li>
-    <li>
-        <a href="#">Overview</a>
-    </li>
-    <li>
-        <a href="#">Events</a>
-    </li>
-    <li>
-        <a href="#">About</a>
-    </li>
-    <li>
-        <a href="#">Services</a>
-    </li>
-    <li>
-        <a href="#">Contact</a>
     </li>
 </ul>

@@ -15,7 +15,7 @@
 </head>
 <body>
 <div id="wrapper">
-    <img id='header-img' src="<?=$img_url?>/header-img.png"/>
+    <a href="http://localhost:8888/chamber/"><img id='header-img' src="<?=$img_url?>/header-img.png"/></a>
     <nav class="navbar navbar-default" role="navigation" id='nav-holder'>
         <div class="container-fluid">
             <div class="navbar-header">

@@ -64,7 +64,7 @@ class event{
 		
 	}
 	public function drawEventLink(){
-		echo "<a class = 'list-group-item' href='event_details.php/?id=".$this->pkid."'>".$this->name.":  ".$this->date. " at " . $this->time."</a>";
+		echo "<a class = 'list-group-item' href='http://localhost:8888/chamber/event_details.php/?id=".$this->pkid."'>".$this->name.":  ".$this->date. " at " . $this->time."</a>";
 	}
 	public function properNameArray(){
 		$values = [];
@@ -211,6 +211,87 @@ class member{
 			
 		}
 		return $values;
+	}
+}
+
+class boardmember {
+	public $name;
+	public $company; 
+	public $email;
+	public $role_id;
+	public $role;
+	public $phone;
+	public $bio;
+	public $img_id;
+	public $website;
+	public $img_html;
+	public function createFromForm($mysqli){
+		$fileName = $_FILES['userfile']['name'];
+		$tmpName  = $_FILES['userfile']['tmp_name'];
+		$fileSize = $_FILES['userfile']['size'];
+		$fileType = $_FILES['userfile']['type'];
+		$upload_type = 1;
+		$fp      = fopen($tmpName, 'r');
+		$content = fread($fp, filesize($tmpName));
+		$content = addslashes($content);
+		fclose($fp);
+		if(!get_magic_quotes_gpc()){
+		    $fileName = addslashes($fileName);
+		}
+		$query = "INSERT INTO upload (name, size, type, content, upload_type_id) "."VALUES ('$fileName', '$fileSize', '$fileType', '$content', $upload_type)";
+		if ($fileSize<$_POST['MAX_FILE_SIZE']){
+		        $mysqli->query($query);
+		        $this->img_id = $mysqli->insert_id;
+		}
+		$keyholder=$valholder=[];
+		foreach($_POST as $key => $val){
+			if ($key != "enterMember" && $key != "MAX_FILE_SIZE"){
+				$keyholder[]=addslashes($key);
+				$valholder[]=addslashes($val);
+				$this->$key=$val;
+			}
+		}
+		$keyholder[]="img_id";
+		$valholder[]=$this->img_id;
+		$query = "INSERT INTO board_member (".join(",",$keyholder).") VALUES ('".join("','",$valholder)."')";
+		$mysqli->query($query);
+	}
+	public static function fetchAllBoardMembers($mysqli){
+		$query="SELECT board_member.*, upload.content as content, board_member_roles.name as role from board_member LEFT JOIN upload ON board_member.img_id = upload.id LEFT JOIN board_member_roles ON board_member.role_id=board_member_roles.pkid";
+		$res=$mysqli->query($query);
+		while($row=$res->fetch_assoc()){
+			$cur=new boardmember();
+			foreach ($row as $key=>$val){
+				if ($key != "content")$cur->$key=$val;
+			}
+			if (isset($row["content"]) && !empty($row["content"])){
+				$cur->img_html='<img class="thumbnail" src="data:image/jpeg;base64,'.base64_encode($row["content"]).'"/>';
+			}
+		$cur->drawInfo();			
+		}
+	}
+
+	public function drawInfo(){
+	echo "<div class='row'>"
+			."<div class='col-lg-8'>"
+				."<h5>".$this->name." of ".$this->company.", <em>".$this->role."</em><h5>"
+				."<ul class='list-unstyled'>"
+				    ."<li>".$this->email."<li>"
+					."<li>".$this->website."<li>"
+					."<li>".$this->phone."<li>"
+				."</ul>"
+			."</div>"
+			."<div class='col-lg-4'>"
+				.$this->img_html
+			."</div>"
+		."</div>"
+		."<div class='row'>"	
+			."<div class='col-lg-12'>"
+				.$this->bio
+			. "</div>"
+		."</div>"
+		."<hr/>";
+
 	}
 }
 

@@ -1,7 +1,7 @@
 <?php include "includes/-header.php";?>
 <?php
 if ($_POST['pres']=="pres"){
-    $message = strip_tags($_POST['presMsg']);
+    $message = addslashes($_POST['presMsg']);
     $query = "INSERT INTO pres_msg (message) VALUES ('".$message."')";
     $mysqli->query($query);
     echo "<h1>President's Message has been update</h1>";
