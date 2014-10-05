@@ -8,7 +8,7 @@ class memberCategory {
 		$this->name=$name;
 		$this->id=$id;
 		$this->mysqli=$mysqli;
-		$res = $mysqli->query("SELECT COUNT(pkid) AS count FROM member WHERE memberCatID=".$id);
+		$res = $mysqli->query("SELECT COUNT(pkid) AS count FROM member WHERE chamber_id = 1 AND memberCatID=".$id);
 		$row = $res -> fetch_assoc();
 		$this->count=$row['count'];
 	}
@@ -96,6 +96,7 @@ class member{
 	public $name;
 	public $catid;
 	public $catnm;
+	public $chamber_id=1;
 	public $URLName;
 	public $desc;
 	public $address;
@@ -110,7 +111,7 @@ class member{
 	public $supersaver;
 	
 	public function getLinkData($id,$mysqli){
-		$query = "SELECT pkid, memberName FROM member WHERE pkid = ".$id." LIMIT 1";
+		$query = "SELECT pkid, memberName FROM member WHERE chamber_id = 1 AND pkid = ".$id." LIMIT 1";
 		$res = $mysqli->query($query);
 		$row = $res->fetch_assoc();
 		$this->id=$row['pkid'];
@@ -122,7 +123,7 @@ class member{
 	}
 
 	public static function getLastXmembers($howmany, $mysqli){
-		$res = $mysqli->query("SELECT pkid FROM member WHERE active = 1 ORDER BY pkid DESC LIMIT ".$howmany);
+		$res = $mysqli->query("SELECT pkid FROM member WHERE chamber_id = 1 AND active = 1 ORDER BY pkid DESC LIMIT ".$howmany);
 		while ($row = $res->fetch_assoc()){
 			$cur = new member();
 			$cur->getLinkData($row['pkid'],$mysqli);
@@ -135,7 +136,7 @@ class member{
 		$row = $res->fetch_assoc();
 		if ($row['count'] < 1){
 			$mysqli->query("TRUNCATE member_of_day");
-			$mysqli->query("insert INTO member_of_day (member_pkid) SELECT pkid FROM member WHERE active = 1 ORDER BY RAND() LIMIT 1");
+			$mysqli->query("insert INTO member_of_day (member_pkid) SELECT pkid FROM member WHERE chamber_id = 1 AND active = 1 ORDER BY RAND() LIMIT 1");
 		}
 		$res=$mysqli->query("SELECT member.pkid, member.memberName FROM member LEFT JOIN member_of_day ON member.pkid = member_of_day.member_pkid WHERE date(daydate)=curdate()"); 
 		$row = $res->fetch_assoc();
@@ -146,7 +147,7 @@ class member{
 	}
 
 	public function getAllPropsByID ($id, $mysqli){
-		$res = $mysqli->query("SELECT member.*,member_cat.member_cat_name as member_cat_name, member_lvl.name as member_level FROM member LEFT JOIN member_cat ON member_cat.pkid = member.memberCatID LEFT JOIN member_lvl ON member.memberLevel = member_lvl.pkid WHERE member.pkid=".$id);
+		$res = $mysqli->query("SELECT member.*,member_cat.member_cat_name as member_cat_name, member_lvl.name as member_level FROM member LEFT JOIN member_cat ON member_cat.pkid = member.memberCatID LEFT JOIN member_lvl ON member.memberLevel = member_lvl.pkid WHERE chamber_id = 1 AND member.pkid=".$id);
 		$row = $res -> fetch_assoc();
 		foreach ($row as $key => $val){
 			$$key = $val;
@@ -182,6 +183,8 @@ class member{
 		$memberStreetAddress=$address1." ".$address2;
 		$keyholder[]="memberStreetAddress";
 		$valholder[]=$memberStreetAddress;
+		$keyholder[]="chamber_id";
+		$valholder[]=$this->chamber_id;
 		$query = "INSERT INTO member (".join(",",$keyholder).") VALUES ('".join("','",$valholder)."')";
 		$mysqli->query($query);
 	}
@@ -212,6 +215,35 @@ class member{
 		}
 		return $values;
 	}
+
+	public static function drawAllSuperSavers($mysqli){
+		$query = "SELECT memberSSS, pkid, memberName FROM member WHERE chamber_id = 1 AND active = 1 and memberSSS != ''";
+		$res=$mysqli->query($query);
+		$count=0;
+		while($row=$res->fetch_assoc()){
+			$count++;
+			$cur=new member();
+			$cur->id=$row['pkid'];
+			$cur->name=$row['memberName'];
+			$cur->supersaver=$row['memberSSS'];
+			if ($count%2==0){echo "<div class='row'>";}
+			$cur->drawSuperSaver();
+			if ($count%2==0){echo "</div>";}
+		}
+	}
+
+	public function drawSuperSaver(){
+		echo'<div class="media col-lg-6">'
+				.'<a class="pull-left" href="http://localhost:8888/chamber/member_details.php?id='.$this->id.'"/>'
+					.'<img class="media-object" src="http://localhost:8888/chamber/images/ssHead.jpg" alt="...">'
+				.'</a>'
+				.'<div class="media-body">'
+					.'<h4 class="media-heading"><a href="http://localhost:8888/chamber/member_details.php?id='.$this->id.'">'.$this->name.'</a></h4>'
+					.$this->supersaver
+				.'</div>'
+			.'</div>';	
+	}
+
 }
 
 class boardmember {
@@ -225,6 +257,7 @@ class boardmember {
 	public $img_id;
 	public $website;
 	public $img_html;
+	public $chamber_id=1;
 	public function createFromForm($mysqli){
 		$fileName = $_FILES['userfile']['name'];
 		$tmpName  = $_FILES['userfile']['tmp_name'];
@@ -253,11 +286,13 @@ class boardmember {
 		}
 		$keyholder[]="img_id";
 		$valholder[]=$this->img_id;
+		$keyholder[]="chamber_id";
+		$valholder[]=$this->$chamber_id=1;
 		$query = "INSERT INTO board_member (".join(",",$keyholder).") VALUES ('".join("','",$valholder)."')";
 		$mysqli->query($query);
 	}
 	public static function fetchAllBoardMembers($mysqli){
-		$query="SELECT board_member.*, upload.content as content, board_member_roles.name as role from board_member LEFT JOIN upload ON board_member.img_id = upload.id LEFT JOIN board_member_roles ON board_member.role_id=board_member_roles.pkid";
+		$query="SELECT board_member.*, upload.content as content, board_member_roles.name as role from board_member LEFT JOIN upload ON board_member.img_id = upload.id LEFT JOIN board_member_roles ON board_member.role_id=board_member_roles.pkid WHERE chamber_id=1";
 		$res=$mysqli->query($query);
 		while($row=$res->fetch_assoc()){
 			$cur=new boardmember();
@@ -293,6 +328,31 @@ class boardmember {
 		."<hr/>";
 
 	}
+}
+
+class banner_ad{
+	public $member_id;
+	public $img_html;
+	public static function drawXAds($mysqli,$x){
+		$query="SELECT upload.content, member.pkid ".
+				"FROM upload LEFT JOIN member_with_ad ON upload.id=member_with_ad.upload_id ".
+					"LEFT JOIN member ON member_with_ad.member_id=member.pkid ".
+				"WHERE member.active=1 AND member.chamber_id=1 ".
+				"ORDER BY RAND() LIMIT ".$x;
+		$res=$mysqli->query($query);
+		while($row=$res->fetch_assoc()){
+			$cur=new banner_ad();
+			$cur->member_id=$row['pkid'];
+			$cur->img_html='<a href="http://localhost:8888/chamber/member_details.php/?id='.$cur->member_id.'"><img class="thumbnail" style="width:100%" src="data:image/jpeg;base64,'.base64_encode($row["content"]).'"/></a>';
+			echo '<div class="row">'
+	    			.'<div class="col-lg-12">'
+	            		.'<span>'.$cur->img_html.'</span>'
+	    			.'</div>'
+				.'</div>';
+		}
+
+	}
+
 }
 
 ?>

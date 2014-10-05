@@ -1,7 +1,7 @@
 
 <?php include "../includes/-header.php";?>
-        <h2>Join Form</h2>
-                <div class="col-lg-8">
-                </div>
+    <div class="col-lg-10">
+    	<?php member::drawAllSuperSavers($mysqli);?>
+    </div>
 <?php include "../includes/-footer.php";?>
 

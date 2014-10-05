@@ -1,11 +1,13 @@
-<ul class="list-unstyled">
-    
-    <li>
+<?php banner_ad::drawXAds($mysqli,2);?>
+<div class="row">
+    <div class="col-lg-12">
         <button type="button" class="btn btn-default btn-lg">
             <span>Advertise&nbsp;with&nbsp;Us!</span>
         </button>
-    </li>
-    <li>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
         <ul class="list-unstyled" >
             <li class="list-group-item list-group-item-info">Upcoming Events &amp; Meetings</li>
             <?php
@@ -17,5 +19,6 @@
             ?>
             <li><a class = 'list-group-item' href="<?=$local_url?>/event-upcoming-list.php">View Full List</a></li>
         <ul/>
-    </li>
-</ul>
+    </div>
+</div>
+
