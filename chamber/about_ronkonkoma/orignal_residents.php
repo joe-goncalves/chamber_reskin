@@ -1,5 +1,9 @@
 
+<?php include '../-local_settings.php';?>
+<?php include '../includes/-custom_functions.php';?>
+<?php include '../includes/-classes.php';?>
 <?php include "../includes/-header.php";?>
+<?php include "../includes/-sidebar.php"; ?>
     <h2>Residents and Settlers</h2>
     <div class="col-lg-8">
 			<h3>Original residents</h3>

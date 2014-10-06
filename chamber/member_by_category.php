@@ -1,5 +1,8 @@
-
-<?php include "includes/-header.php";?>
+<?php include './-local_settings.php';?>
+<?php include './includes/-custom_functions.php';?>
+<?php include './includes/-classes.php';?>
+<?php include "./includes/-header.php";?>
+<?php include "./includes/-sidebar.php"; ?>
         <h2>Members <small>click to expand category</small></h2>
         <div class="col-lg-5">
         	<ul class ='list-group first'>
@@ -32,8 +35,5 @@
 			?>
         </div>
 <?php 
-
-
-
-include "includes/-footer.php";?>
+include "./includes/-footer.php";?>
 

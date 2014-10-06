@@ -1,5 +1,9 @@
 
+<?php include '../-local_settings.php';?>
+<?php include '../includes/-custom_functions.php';?>
+<?php include '../includes/-classes.php';?>
 <?php include "../includes/-header.php";?>
+<?php include "../includes/-sidebar.php"; ?>
         <h2>Our Mission Statement</h2>
                 <div class="col-lg-8">
                 	<p>The Chamber is the platform for business to provide leadership, education and advocacy so the Greater Ronkonkoma's area thrives in the 21st century.</p>
@@ -12,5 +16,5 @@
 						<li>To create a broad understanding and appreciation of the opportunities in the Greater Ronkonkoma area and to promote the advantages and assets of our community.
 					</ul>
                 </div>
-<?php include "../includes/-footer.php";?>
+<?php include $dir."includes/-footer.php";?>
 

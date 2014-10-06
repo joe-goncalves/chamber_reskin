@@ -1,5 +1,8 @@
-
-<?php include "includes/-header.php";?>
+<?php include './-local_settings.php';?>
+<?php include './includes/-custom_functions.php';?>
+<?php include './includes/-classes.php';?>
+<?php include "./includes/-header.php";?>
+<?php include "./includes/-sidebar.php"; ?>
         <div class="col-lg-5">
         	<h2>Members <small>Click to view details</small></h2>
         	<form role="form">
@@ -20,7 +23,7 @@
 			    </div>
 			</form>
         </div>
-<?php include "includes/-footer.php";?>
+<?php include "./includes/-footer.php";?>
 
 <script>
     $('#searchlist').btsListFilter('#searchinput');

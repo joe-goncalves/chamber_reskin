@@ -1,3 +1,6 @@
+<?php include $_SERVER['http_request_method_exists(method)']."/chamber/-local_settings.php";?>
+<?php include '-classes.php';?>
+<?php include '-custom_functions.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <title><?php echo $local_url; ?></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
@@ -72,3 +76,6 @@
     <!-- side nav -->
     <div class="container-fluid">
         <div class="row" id="page-content">
+            <div id="sidebar-wrapper" class="col-lg-2">
+                <?php include $_SERVER['HTTP_HOST']."/chamber/includes/-sidebar.php";?>
+            </div>

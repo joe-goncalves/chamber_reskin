@@ -1,5 +1,9 @@
 
+<?php include '../-local_settings.php';?>
+<?php include '../includes/-custom_functions.php';?>
+<?php include '../includes/-classes.php';?>
 <?php include "../includes/-header.php";?>
+<?php include "../includes/-sidebar.php"; ?>
 	<h2>Summer Resort</h2>
 	<div class="col-lg-8">
 	<p>Lake Ronkonkoma became known as a summer resort in the late 1800s and early 1900s. There were a few boarding houses in town. One of the better-known hotels on the lake was the Lake Front Hotel. This was where many guests stayed and social events for the summer visitors took place. The Lake Front Hotel situated on twenty-four acres of land on the lakeshore was open from May 1st and January 1st each year.</p>

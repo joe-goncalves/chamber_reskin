@@ -1,5 +1,8 @@
-
+<?php include '../-local_settings.php';?>
+<?php include '../includes/-custom_functions.php';?>
+<?php include '../includes/-classes.php';?>
 <?php include "../includes/-header.php";?>
+<?php include "../includes/-sidebar.php"; ?>
 <?php
 if (isset($_POST['memberName'])){
 	$member=new member();

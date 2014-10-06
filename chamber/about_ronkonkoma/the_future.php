@@ -1,5 +1,8 @@
-
+<?php include '../-local_settings.php';?>
+<?php include '../includes/-custom_functions.php';?>
+<?php include '../includes/-classes.php';?>
 <?php include "../includes/-header.php";?>
+<?php include "../includes/-sidebar.php"; ?>
     <h2>The Future of Lake Ronkonkoma</h2>
     <div class="col-lg-8">
 		<h3>Pollution Prevention</h3>

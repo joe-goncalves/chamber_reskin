@@ -9,4 +9,7 @@ ini_set('display_errors', 'On');
 	if ($mysqli->connect_errno) {
     	echo "Failed to connect to MySQL: (" . $GLOBALS['mysqli']->connect_errno . ") " . $GLOBALS['mysqli']->connect_error;
 	}
+	echo "<pre>";
+	var_dump(debug_backtrace());
+	echo "</pre>";
 ?>
