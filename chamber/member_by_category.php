@@ -25,7 +25,7 @@
 						}
 						$member = new member();
 						$member->getAllPropsByID($pkid, $mysqli);
-						echo "<li class = 'list-group-item second hidden'><a href='".$local_url."/member_details.php?id=".$member->id."' data-membercatid = '".$member->catid."'data-memberid='".$member->id."'>".$member->name."</a></li>";
+						echo "<li class = 'list-group-item second hidden'><a href='".$GLOBALS['local_url']."/member_details.php?id=".$member->id."' data-membercatid = '".$member->catid."'data-memberid='".$member->id."'>".$member->name."</a></li>";
 					};
 				echo"</ul>";
 			echo"</div>";

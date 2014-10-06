@@ -46,9 +46,7 @@
         </div>
     </div>
 </div>
-<!--script src="<=$local_url>/js/jquery-1.11.0.js"></script-->
-<script src="<?=$local_url?>/js/bootstrap.min.js"></script>
-<script src="<?=$local_url?>/js/-bootstrap-list-filter.src.js"></script>
+<script src="<?=$GLOBALS['local_url']?>/js/-bootstrap-list-filter.src.js"></script>
 <script>
     $(document).ready(function(){
 

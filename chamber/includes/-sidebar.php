@@ -17,7 +17,7 @@
                 $cur->drawEventLink();
             }
             ?>
-            <li><a class = 'list-group-item' href="<?=$local_url?>/event-upcoming-list.php">View Full List</a></li>
+            <li><a class = 'list-group-item' href="<?=$GLOBALS['local_url']?>/event-upcoming-list.php">View Full List</a></li>
         <ul/>
     </div>
 </div>

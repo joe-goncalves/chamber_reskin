@@ -64,7 +64,7 @@ class event{
 		
 	}
 	public function drawEventLink(){
-		echo "<a class = 'list-group-item' href='http://localhost:8888/chamber/event_details.php/?id=".$this->pkid."'>".$this->name.":  ".$this->date. " at " . $this->time."</a>";
+		echo "<a class = 'list-group-item' href='".$GLOBALS['local_url']."/event_details.php/?id=".$this->pkid."'>".$this->name.":  ".$this->date. " at " . $this->time."</a>";
 	}
 	public function properNameArray(){
 		$values = [];
@@ -119,7 +119,7 @@ class member{
 	}
 
 	public function drawLink(){
-		echo "<a class = 'list-group-item' href='member_details.php/?id=".$this->id."'>".$this->name."</a>";
+		echo "<a class = 'list-group-item' href='".$GLOBALS['local_url']."/member_details.php/?id=".$this->id."'>".$this->name."</a>";
 	}
 
 	public static function getLastXmembers($howmany, $mysqli){
@@ -234,11 +234,11 @@ class member{
 
 	public function drawSuperSaver(){
 		echo'<div class="media col-lg-6">'
-				.'<a class="pull-left" href="http://localhost:8888/chamber/member_details.php?id='.$this->id.'"/>'
-					.'<img class="media-object" src="http://localhost:8888/chamber/images/ssHead.jpg" alt="...">'
+				.'<a class="pull-left" href="'.$GLOBALS['local_url'].'/member_details.php?id='.$this->id.'"/>'
+					.'<img class="media-object" src="'.$GLOBALS['local_url'].'/images/ssHead.jpg" alt="...">'
 				.'</a>'
 				.'<div class="media-body">'
-					.'<h4 class="media-heading"><a href="http://localhost:8888/chamber/member_details.php?id='.$this->id.'">'.$this->name.'</a></h4>'
+					.'<h4 class="media-heading"><a href="'.$GLOBALS['local_url'].'/member_details.php?id='.$this->id.'">'.$this->name.'</a></h4>'
 					.$this->supersaver
 				.'</div>'
 			.'</div>';	
@@ -343,7 +343,7 @@ class banner_ad{
 		while($row=$res->fetch_assoc()){
 			$cur=new banner_ad();
 			$cur->member_id=$row['pkid'];
-			$cur->img_html='<a href="http://localhost:8888/chamber/member_details.php/?id='.$cur->member_id.'"><img class="thumbnail" style="width:100%" src="data:image/jpeg;base64,'.base64_encode($row["content"]).'"/></a>';
+			$cur->img_html='<a href="'.$GLOBALS['local_url'].'/member_details.php/?id='.$cur->member_id.'"><img class="thumbnail" style="width:100%" src="data:image/jpeg;base64,'.base64_encode($row["content"]).'"/></a>';
 			echo '<div class="row">'
 	    			.'<div class="col-lg-12">'
 	            		.'<span>'.$cur->img_html.'</span>'
