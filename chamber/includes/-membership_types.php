@@ -1,7 +1,7 @@
 <ul class="list-group">
 	<li class="list-group-item">
 		<strong>Silver Membership</strong>  - $150.00: Offers monthly group advertising, and a listing on our website, with a link to your homepage. 
-	</li class="list-group-item">
+	</li>
 	<li class="list-group-item">
 		<strong>Gold Membership</strong> - $375.00: Offers all of the above, including a distinctive plaque, and 2 tickets to our fundraising Heart and Soul Award Dinner. 
 	</li>

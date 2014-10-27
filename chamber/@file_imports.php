@@ -23,7 +23,7 @@ if(isset($_POST['upload']) &&   $_FILES['userfile']['size'] > 0){
         exit();
 } 
 ?>
-        <div class="col-lg-8">
+        <div class="col-md-8">
             <form method="post" enctype="multipart/form-data" role="form">
               <div class="form-group">
                 <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
@@ -54,7 +54,7 @@ if(isset($_POST['upload']) &&   $_FILES['userfile']['size'] > 0){
 
 
 
-                <input type="submit" name="upload" class="btn btn-lg-default" id="upload" value="Upload">
+                <input type="submit" name="upload" class="btn btn-md-default" id="upload" value="Upload">
               </div>
             </form>
 	   </div>

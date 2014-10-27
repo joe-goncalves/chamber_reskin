@@ -5,7 +5,7 @@ if ($_POST['enterMember']=="done"){
     $cur->createFromForm($mysqli); 
 }
 ?> 
-<div class="col-lg-8">
+<div class="col-md-8">
     <form method="post" enctype="multipart/form-data" role="form">
       <div class="form-group">
         <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
@@ -74,7 +74,7 @@ if ($_POST['enterMember']=="done"){
                 </span>
             </div>
         </div>
-        <input type="submit" name="enterMember" class="btn btn-lg-default" id="upload" value="done">
+        <input type="submit" name="enterMember" class="btn btn-md-default" id="upload" value="done">
       </div>
     </form>
 </div>

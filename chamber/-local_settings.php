@@ -9,4 +9,6 @@ ini_set('display_errors', 'On');
 	if ($mysqli->connect_errno) {
     	echo "Failed to connect to MySQL: (" . $GLOBALS['mysqli']->connect_errno . ") " . $GLOBALS['mysqli']->connect_error;
 	}
+	$chamberid=1; //ronkomkoma
+	$GLOBALS['chamberid']=$chamberid;
 ?>

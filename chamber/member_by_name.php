@@ -3,28 +3,31 @@
 <?php include './includes/-classes.php';?>
 <?php include "./includes/-header.php";?>
 <?php include "./includes/-sidebar.php"; ?>
-        <div class="col-lg-5">
-        	<h2>Members <small>Click to view details</small></h2>
-        	<form role="form">
-			    <div class="form-group">
-			        <input id="searchinput" class="form-control" type="search" placeholder="Search..." />
-			    </div>
-			    <div id="searchlist" class="list-group">
-			        <?php
-			        $res = $mysqli->query("SELECT * FROM member");
+<div class="col-md-9">
+	<div class="row">
+    	<div class="col-md-12">
+    		<h2>Members</h2>
+    		<form role="form">
+		    	<div class="form-group">
+		        	<input id="searchinput" class="form-control" type="search" placeholder="Search..." />
+		    	</div>
+		    	<div id="searchlist" class="list-group">
+		        	<?php
+		        	$res = $mysqli->query("SELECT * FROM member WHERE active=1 ORDER BY memberName");
 						while ($row = $res->fetch_assoc()){
 							foreach($row as $key => $val)$$key = $val;
 							$member = new member();
-							//$member->getAllPropsByID($pkid, $mysqli);
 							$member->getLinkData($pkid, $mysqli);
 							$member->drawLink();
 						};
-			        ?>
-			    </div>
+		        	?>
+		    	</div>
 			</form>
-        </div>
-<?php include "./includes/-footer.php";?>
-
+		</div>
+	</div>
+</div>
 <script>
     $('#searchlist').btsListFilter('#searchinput');
 </script>
+<?php include "./includes/-footer.php";?>
+

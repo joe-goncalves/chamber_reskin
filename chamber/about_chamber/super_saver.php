@@ -3,8 +3,13 @@
 <?php include '../includes/-classes.php';?>
 <?php include "../includes/-header.php";?>
 <?php include "../includes/-sidebar.php"; ?>
-    <div class="col-lg-10">
-    	<?php member::drawAllSuperSavers($mysqli);?>
-    </div>
+<div class="col-md-9">
+	<div class='row'>
+		<div class="col-md-12">
+			<h2>Super Savers</h2>
+		</div>
+	</div>
+	<?php member::drawAllSuperSavers($mysqli);?>
+</div>
 <?php include "../includes/-footer.php";?>
 

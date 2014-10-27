@@ -1,7 +1,7 @@
 
 <?php include "includes/-header.php";?>
         <h2>Join Form</h2>
-                <div class="col-lg-8">
+                <div class="col-md-8">
                 <?php
                 $res=$mysqli->query("SELECT pkid FROM event where active = 1 and eventDateExp < curdate()");
                 while ($row = $res->fetch_assoc()){

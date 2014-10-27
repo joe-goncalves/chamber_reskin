@@ -1,34 +1,36 @@
-        </div>
+
     </div>
 </div>
     <!-- /#wrapper -->
-</body>
-</html>
 <div id="footer" class='container-fluid'>
     <div class="row">
-        <div class="col-md-6 col-sm-12">
-            <h2>The Chamber of Commerce of the Greater Ronkonkomas</h2>
+        <div class="col-md-8">
             <div class="row">
-                <div class="col-xs-4 col-sm-4">
-                    Contact Us: PO Box 2546
-                </div>
-                <div class="col-xs-8 col-sm-8">
-                    p: 631-963-2796
+                <div class="col-md-12">
+                    <h3>Stay Connected</h3>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-4 col-sm-4">
-                    Ronkonkoma, NY 11779
+                <div class="col-md-4">
+                    <p>PO Box 2546</p>
+                    <p>Ronkonkoma, NY 11779</p>
                 </div>
-                <div class="col-xs-8 col-sm-8">
-                    e:  <a class="foot_links" href="mailto:info@ronkonkomachamber.com">info@ronkonkomachamber.com</a>
+                <div class="col-md-8">
+                    <p><i class="fa fa-envelope"></i>  <a class="foot_links" href="mailto:info@ronkonkomachamber.com">info@ronkonkomachamber.com</a></p>
+                    <p><i class="fa fa-phone"></i><a href="tel:+1631-963-2796">631-963-2796</a></p>
+                    <i class="fa fa-facebook-square"></i><a href="http://www.facebook.com/pages/Ronkonkoma-Chamber-of-Commerce/193799817361633">like us on facebook!</a>
+
                 </div>
             </div>
         </div>
-        <div class = "col-md-4 col-sm-12">
-            <h2>join our mailing list</h2>
+        <div class = "col-md-4">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Join Our Mailing List</h3>
+                </div>
+            </div>
             <form method="post" target="_blank" id='ccoptin' action="http://visitor.constantcontact.com/d.jsp" name="ccoptin">
-                Email:
+                <p>Email</p>
                 <div class = "input-group input-group-sm">
                     <input type="text" value="" size="26" name="ea" class = "form-control">
                     <span class="input-group-btn">
@@ -37,31 +39,20 @@
                 </div>
                 <input type="hidden" value="1102554981432" name="m">
                 <input type="hidden" value="oi" name="p">
-            </form>   
-        </div>         
-        <div class = "col-md-2 col-sm-12">
-            <a style="color:#fff" href="http://www.facebook.com/pages/Ronkonkoma-Chamber-of-Commerce/193799817361633">
-                <img style="margin-right:5px" alt="FB" src="http://www.ronkonkomachamber.com/images/fb.png">stay connected
-            </a>
+            </form> 
+        </div>
+    </div>
+    <div class='row'>
+        <div class="col-md-10">
+            <p class='text-center'>Copyright © 2013. The Chamber of Commerce of the Great Ronkonkomas</p>
+        </div>
+        <div class="col-md-2 text-right">
+            <a href="<?=$GLOBALS['local_url']?>/about_chamber/privacy.php">Privacy</a>
+            <span>|</span>
+            <a href="<?=$GLOBALS['local_url']?>/about_chamber/legal.php">Legal</a>
         </div>
     </div>
 </div>
-<script src="<?=$GLOBALS['local_url']?>/js/-bootstrap-list-filter.src.js"></script>
-<script>
-    $(document).ready(function(){
-
-
-        /*  member by category page  */
-        $('[data-catid]').click(function(e){
-            e.preventDefault();
-        })
-        $('.list-group-item.first').click(function(){ /*  include a catch to close open lists on click of open list header  */
-           $('[data-membercatid]').parent().addClass('hidden');
-           var curval = $(this).children('a').attr("data-catid");
-           $('[data-membercatid='+curval+']').parent().removeClass('hidden');
-        });
-
-
-    });
-</script>
+</body>
+</html>
 
